@@ -1,7 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root {
+    /* Primary */
+    --Dark_cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    /* Neutral */
+    --Very_dark-blue: hsl(212, 21%, 14%);
+    --Dark_grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Fonts */
+    --primary-font: 'Montserrat', sans-serif;
+    --second-font: 'Fraunces', serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: var(--primary-font);
+    background-color: var(--Cream);
+}
+
+/* Card */
+.card {
+    margin: 68px auto;
+    background-color: var(--White);
+    width: 344px;
+    height: 612px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Section One */
+
+.card__section-one__img {
+    width: 100%;
+}
+
+/* Section Two */
+
+.card__section-two {
+    padding: 18px;
+}
+
+.card__section-two__category {
+    color: var(--Dark_grayish-blue);
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.card__section-two__title {
+    font-family: var(--second-font);
+    margin-bottom: 16px;
+    line-height: 34px;
+    color: var(--Very_dark-blue);
+    font-size: 2.2em;
+}
+
+.card__section-two__description {
+    font-size: 0.95em;
+    color: var(--Dark_grayish-blue);
+    margin-bottom: 44px;
+    line-height: 22px;
+}
+
+.card__section-two__price {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.card__section-two__discount {
+    font-family: var(--second-font);
+    font-size: 2.3em;
+    color: var(--Dark_cyan);
+}
+
+.card__section-two__total {
+    color: var(--Dark_grayish-blue);
+    text-decoration: line-through;
+}
+
+.card__section-two__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 296px;
+    height: 50px;
+    font-size: 1.1em;
+    margin-left: 6px;
+    background-color: var(--Dark_cyan);
+    border: none;
+    border-radius: 16px;
+    color: var(--White);
+    font-weight: 700;
+    transition: .3s;
+}
+
+.card__section-two__button:hover {
+    background-color: var(--Very_dark-blue);
+    cursor: pointer;
+}
+
 /* Header */
 .attribution { 
     font-size: 11px; text-align: center;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* Media Queries */
+/* >620px */
+@media only screen and (min-width: 620px) {
+    .card {
+        display: flex;
+        width: 600px;
+        height: 450px;
+        margin: 175px auto 75px;
+    }
+
+    .card__section-one, .card__section-two {
+        width: 300px;
+    }
+    
+    .card__section-one__img {
+        content: url(../images/image-product-desktop.jpg);
+    }
+
+    .card__section-two {
+        padding: 24px;
+    }
+
+    .card__section-two__title {
+        padding-right: 23px;
+        margin-bottom: 23px;
+    }
+
+    .card__section-two__description, 
+    .card__section-two__price {
+        margin-bottom: 30px;
+    }
+
+    .card__section-two__button {
+        width: 100%;
+        margin: 0;
+    }
 }
